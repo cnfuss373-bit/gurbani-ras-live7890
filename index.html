@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -14,7 +16,15 @@
 
 <style>
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
 
 body {
 
@@ -29,8 +39,6 @@ body {
     align-items: center;
 
     justify-content: center;
-
-    perspective: 1200px;
 
 }
 
@@ -47,8 +55,6 @@ body {
     align-items: center;
 
     justify-content: center;
-
-    transform-style: preserve-3d;
 
 }
 
@@ -76,15 +82,17 @@ body {
 
     object-fit: contain;
 
+    border-radius: 50%;
+
+    clip-path: circle(50%);
+
     position: relative;
 
     z-index: 2;
 
-    animation: rotate 8s linear infinite;
+    animation: float 3s ease-in-out infinite alternate;
 
     filter: drop-shadow(0 0 12px gold);
-
-    transform-style: preserve-3d;
 
 }
 
@@ -108,11 +116,19 @@ body {
 
 }
 
-@keyframes rotate {
+@keyframes float {
 
-    from { transform: rotateY(0deg); }
+    from {
 
-    to { transform: rotateY(360deg); }
+        transform: translateY(-5px) rotateZ(-3deg);
+
+    }
+
+    to {
+
+        transform: translateY(5px) rotateZ(3deg);
+
+    }
 
 }
 
